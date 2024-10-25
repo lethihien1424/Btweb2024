@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        table {
+            width: 300px;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        th {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        tr:hover {
+            background-color: #ddd;
+        }
+        
+        td:first-child {
+            font-weight: bold;
+            background-color: #f9f9f9;
+        }
+        
+        td:last-child {
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Infor</h1>
+    <table width="200" border="1">
+        <tr>
+            <th colspan="2">THONG TIN DANG NHAP</th>
+        </tr>
+        <tr>
+            <td>User Name</td>
+            <td id="us">AAAA</td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td id="pw">BBBBB</td>
+        </tr>
+
+        <tr>
+            <td>Cafe ban chon</td>
+            <td id="cf">CCCC</td>
+        </tr>
+        <tr>
+            <td>Gioi tinh</td>
+            <td id="gen">DDDD</td>
+        </tr>
+    </table>
+
+
+</body>
+<script>
+    // Lấy dữ liệu từ localStorage và gán vào HTML
+    var gt1, gt2;
+    gt1 = localStorage.getItem("us");
+    gt2 = localStorage.getItem("pd");
+    gt3 = localStorage.getItem("cf");
+    gt4 = localStorage.getItem("gt");
+
+    //Xuất vào id đã có
+    document.getElementById("us").innerHTML = gt1;
+    document.getElementById("pw").innerHTML = gt2;
+    document.getElementById("cf").innerHTML = gt3;
+    document.getElementById("gen").innerHTML = gt4;
+</script>
+
+</html>

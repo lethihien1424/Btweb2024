@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .wrapper {
+            background-color: #fff;
+            padding: 30px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .wrapper form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .wrapper input[type="text"],
+        .wrapper input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .wrapper input[type="radio"],
+        .wrapper input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        
+        .wrapper label {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .wrapper input[type="button"] {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        
+        .wrapper input[type="button"]:hover {
+            background-color: #218838;
+        }
+        
+        .gender,
+        .cafe-options {
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <form>
+            <input type="text" id="txtus" placeholder="User name">
+            <br>
+            <input type="password" id="txtmk" placeholder="Password">
+            <br>
+            <input type="radio" name="gt" value="Nam">Nam
+            <input type="radio" name="gt" value="Nu">Nu
+            <br>
+            <input type="checkbox" value="Trung Nguyen">Trung Nguyen
+            <br>
+            <input type="checkbox" value="MeKong">MeKong
+            <br>
+            <input type="checkbox" value="New Blue">New Blue
+            <br>
+            <input type="checkbox" value="Tra Sua">Tra sua
+            <br>
+            <input type="button" value="Nhap" onclick="Nhap()">
+            <br>
+        </form>
+    </div>
+
+</body>
+<script>
+    function Nhap() {
+        var tendn, mk;
+        tendn = document.getElementById("txtus").value;
+        mk = document.getElementById("txtmk").value;
+
+        // Lưu các loại cafe đã chọn
+        var cafe = new Array();
+        var taphop = document.querySelectorAll("input[type='checkbox']");
+
+        taphop.forEach(function(chk) {
+            if (chk.checked)
+                cafe.push(chk.value);
+        });
+
+        // Lưu giới tính đã chọn
+        var gtinh;
+        var taphopgt = document.querySelectorAll("input[type='radio']");
+        taphopgt.forEach(function(ra) {
+            if (ra.checked)
+                gtinh = ra.value;
+        });
+
+        // Kiểm tra và lưu dữ liệu vào localStorage
+        var w = window.open("info.html")
+        localStorage.setItem("us", tendn);
+        localStorage.setItem("pd", mk);
+        localStorage.setItem("cf", cafe);
+        localStorage.setItem("gt", gtinh);
+
+
+    }
+</script>
+
+</html>
